@@ -5933,7 +5933,6 @@ void update_window_color_style(FvwmWindow *fw, window_style *pstyle)
 		fw->border_colors_handles_se.shadow = fw->colors.shadow;
 		fw->border_colors_handles_se.back = fw->colors.back;
 	}
-
 }
 
 void update_window_color_hi_style(FvwmWindow *fw, window_style *pstyle)
