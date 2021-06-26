@@ -673,7 +673,7 @@ static void get_common_decorations(
 	}
 
 	/* MWMBorder style means thin 3d effects */
-	cd->relief_width = (HAS_MWM_BORDER(t) ? 1 : 2);
+	cd->relief_width = (HAS_MWM_BORDER(t) ? 2 : 2);
 
 	if (cd->texture_pixmap)
 	{
@@ -1286,9 +1286,9 @@ static void border_fetch_mwm_layout(
 	ret_size_descr->w_hiout = 2;
 	ret_size_descr->w_trout = 0;
 	ret_size_descr->w_trin = 0;
-	ret_size_descr->w_shin = 1;
+	ret_size_descr->w_shin = 2;
 	ret_size_descr->w_din = 0;
-	ret_size_descr->sum = 3;
+	ret_size_descr->sum = 4;
 	ret_size_descr->trim = ret_size_descr->sum - fw->boundary_width + 1;
 	check_remove_inset(borderstyle, ret_size_descr);
 	trim_border_layout(fw, borderstyle, ret_size_descr);
@@ -3138,7 +3138,7 @@ static void border_draw_decor_to_pixmap(
 	}
 	else
 	{
-		border = HAS_MWM_BORDER(fw) ? 1 : 2;
+		border = HAS_MWM_BORDER(fw) ? 2 : 2;
 	}
 	dest_g.width = w_g->width;
 	dest_g.height = w_g->height;
