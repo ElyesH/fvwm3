@@ -469,6 +469,21 @@ PKG_CHECK_MODULES([libevent], [libevent >= 2.0],
 AC_SUBST(libevent_LIBS)
 AC_SUBST(libevent_CFLAGS)
 
+# libucl
+AH_TEMPLATE([HAVE_LIBUCL], [Check if libucl is present.])
+PKG_CHECK_MODULES([libucl], [libucl >= 0.8.0],
+[
+ 	AC_DEFINE(HAVE_LIBUCL)
+	libconfig_LIBS=`pkg-config --libs libucl`
+	libconfig_CFLAGS=`pkg-config --cflags libucl`
+],
+[
+ 	AC_MSG_ERROR([*** libucl not found.  Install its header files. ***])
+])
+
+AC_SUBST(libucl_LIBS)
+AC_SUBST(libucl_CFLAGS)
+
 # ********* XRandR
 AH_TEMPLATE([HAVE_XRANDR],[Define if XRandR library is used.])
 PKG_CHECK_MODULES([xrandr], [xrandr >= 1.5],
